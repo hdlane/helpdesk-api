@@ -28,6 +28,29 @@ def init_db():
             uptime TEXT,
             last_contact TEXT);
         """)
+    with sqlite3.connect("computers.db") as computers:
+        cursor = computers.cursor()
+        query = cursor.execute("""
+        SELECT EXISTS (
+            SELECT name
+            FROM sqlite_schema
+            WHERE type='table' AND
+            name='computers'
+        )
+        """)
+        if (query.fetchone()[0] == 0):
+            cursor.execute("""
+            CREATE TABLE computers(
+                computer_name TEXT NOT NULL,
+                mac_address TEXT NOT NULL UNIQUE,
+                user_name TEXT,
+                ip_address TEXT NOT NULL,
+                os TEXT,
+                model TEXT,
+                drive TEXT,
+                uptime TEXT,
+                last_contact TEXT);
+            """)
 
 
 app = create_app()
