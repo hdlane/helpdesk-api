@@ -19,7 +19,20 @@ Having the Helpdesk Tool and Helpdesk Service communicate meant that a shared en
 
 ## Installation
 
-### Requirements
+Clone repo down from Github.
+
+```
+git clone https://github.com/hdlane/helpdesk-api.git
+```
+
+Setup your Python virtualenv and install Flask. Then run `flask run`.
+
+```
+python -m venv .venv
+source .venv/bin/activate
+pip install flask
+flask run
+```
 
 ## Usage
 
