@@ -25,9 +25,10 @@ Clone repo down from Github.
 git clone https://github.com/hdlane/helpdesk-api.git
 ```
 
-Setup your Python virtualenv and install Flask. Then run `flask run`.
+Enter the cloned repo and setup your Python virtualenv and install Flask. Then run `flask run`.
 
 ```
+cd helpdesk-api
 python -m venv .venv
 source .venv/bin/activate
 pip install flask
@@ -35,6 +36,8 @@ flask run
 ```
 
 ## Usage
+
+When the API endpoint is running, it is listening for GET and POST requests. When a GET request is recieved, it will query the database and send that data in JSON format. When a POST request is received, it will validate the data, update computer records based on MAC address, and create a new record if it's not already present. 
 
 ## License
 
