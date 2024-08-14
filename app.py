@@ -122,7 +122,7 @@ def index():
                         model = '{model}',
                         drive = '{drive}',
                         uptime = '{uptime}',
-                        last_contact = '{last_contact}',
+                        last_contact = '{last_contact}'
                     WHERE
                         mac_address = '{mac_address}'
                     """)
